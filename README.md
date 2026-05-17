@@ -34,3 +34,10 @@ A production-ready stock price prediction web app built with scikit-learn, deplo
 
 ## 🚀 Run Locally
 ```bash
+git clone https://github.com/priyanka0430/stock-price-prediction-lstm-attention
+cd stock-price-prediction-lstm-attention
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+## 📁 Project Structure

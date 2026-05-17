@@ -92,8 +92,12 @@ TARGET_COL_IDX = FEATURE_COLS.index('Close')
 
 @st.cache_data(show_spinner=False)
 def load_and_engineer(ticker, start, end):
-    df = yf.download(ticker, start=start, end=end, progress=False)
-    df.columns = df.columns.get_level_values(0)
+    tk = yf.Ticker(ticker)
+    df = tk.history(start=start, end=end, auto_adjust=True)
+    if df.empty:
+        raise ValueError(f"No data found for ticker '{ticker}'. Check the symbol and date range.")
+    df.index = df.index.tz_localize(None)
+    df = df[['Open', 'High', 'Low', 'Close', 'Volume']].copy()
     df.dropna(inplace=True)
 
     df['Returns']           = df['Close'].pct_change()

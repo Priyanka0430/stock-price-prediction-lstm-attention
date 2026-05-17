@@ -41,3 +41,15 @@ streamlit run app.py
 ```
 
 ## 📁 Project Structure
+├── app.py              # Main Streamlit application
+├── requirements.txt    # Python dependencies
+└── README.md           # Project documentation
+
+## ✨ Key Features
+- Works with any stock ticker worldwide (AAPL, TSLA, TCS.NS, RELIANCE.NS)
+- Configurable lookback window, epochs, and architecture from sidebar
+- Real-time training progress with live loss curve
+- Downloadable metrics as JSON
+
+## 👩‍💻 Author
+**Priyanka** — [LinkedIn]([https://linkedin.com/in/YOUR-LINKEDIN-HERE](https://www.linkedin.com/in/priyanka-t-s-8704a22a1))
